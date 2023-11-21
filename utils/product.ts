@@ -1,7 +1,7 @@
 export const product = {
     id: "64a654593e91b8e73a351e9b",
     name: "Flyer",
-    description: "Short description",
+    description: "Windproof ultralight and breathable fabric resist liquid water passing through, but allow water vapour to pass through. The ability to block out rain for a short time is very powerfull. A cilicon coating will keep you dry because the water fall down in the blink of an eye. ",
     price: 69,
     brand: "apple",
     category: "Phone",
