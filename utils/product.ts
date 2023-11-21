@@ -3,8 +3,8 @@ export const product = {
     name: "Flyer",
     description: "Windproof ultralight and breathable fabric resist liquid water passing through, but allow water vapour to pass through. The ability to block out rain for a short time is very powerfull. A cilicon coating will keep you dry because the water fall down in the blink of an eye. ",
     price: 69,
-    brand: "apple",
-    category: "Phone",
+    brand: "bigK",
+    category: "Flyer",
     inStock: true,
     images: [
       {
