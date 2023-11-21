@@ -1,8 +1,16 @@
+import Container from "./components/Container";
+import HomeBanner from "./components/HomeBanner";
 
 
 export default function Home() {
   return (
-    <div>home</div>
+    <div className="p-8">
+     <Container>
+       <div className="">
+        <HomeBanner />
+       </div>
+     </Container>
+    </div>
   )
 }
 
