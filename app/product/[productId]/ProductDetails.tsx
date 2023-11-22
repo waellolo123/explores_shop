@@ -7,7 +7,7 @@ import { useCart } from "@/hooks/useCart";
 import { Rating } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { MdCheckCircleOutline } from "react-icons/md";
+import { MdCheckCircle } from "react-icons/md";
 
 interface ProductDetailsProps {
   product: any
@@ -117,8 +117,8 @@ const ProductDetails:React.FC<ProductDetailsProps> = ({product}) => {
       {isProductInCart 
       ? 
       <>
-      <p className="mb-2 text-slate-500 flex items-center gap-1">
-        <MdCheckCircleOutline className="text-teal-400"/>
+      <p className="mb-2 text-slate-500 flex items-center gap-2">
+        <MdCheckCircle className="text-teal-400" size={24}/>
         <span >Product added to cart</span>
       </p>
       <div className="max-w-[300px]">
