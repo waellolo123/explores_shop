@@ -4,11 +4,13 @@ import Link from "next/link";
 import { MdArrowBack } from "react-icons/md";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
+import ItemContent from "./ItemContent";
+import { formatPrice } from "@/utils/formatPrice";
 
 
 const CartClient = () => {
 
-  const {cartProducts} = useCart();
+  const {cartProducts, handleClearCart, cartTotalAmount} = useCart();
   if(!cartProducts || cartProducts.length === 0){
     return (
       <div className="flex flex-col items-center ">
@@ -35,19 +37,17 @@ const CartClient = () => {
       </div>
       <div className="">
         {cartProducts && cartProducts.map((item)=> {
-          return <div key={item.id}>
-            {item.name}
-          </div>
+          return <ItemContent key={item.id} item={item}/>
         })}
       </div>
       <div className="border-t-[1.5px] border-slate-200 py-4 flex justify-between items-center gap-4">
         <div className="w-[90px]">
-          <Button label="Clear Cart" small outline onclick={() => {}}/>
+          <Button label="Clear Cart" small outline onclick={() => {handleClearCart()}}/>
         </div>
         <div className="text-sm flex flex-col gap-4 items-start">
             <div className="flex gap-2 justify-between w-full text-base font-semibold">
              <span>Subtotal</span>
-             <span>$1.000</span>
+             <span>{formatPrice(cartTotalAmount)}</span>
             </div>
             <p className="text-slate-500">Taxes and shipping calculated at checkout</p>
             <Button label="Checkout" onclick={()=>{}}/>
