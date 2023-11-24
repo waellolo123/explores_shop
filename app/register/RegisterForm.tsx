@@ -9,9 +9,8 @@ import Link from "next/link";
 import { AiOutlineGoogle } from "react-icons/ai";
 import axios from "axios";
 import toast from "react-hot-toast";
-import {signIn} from "next-auth/react";
 import { useRouter } from "next/navigation";
-
+import {signIn} from "next-auth/react";
 
 const RegisterForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -43,13 +42,14 @@ const router = useRouter();
         if(callback?.error){
           toast.error(callback.error)
         }
-    })
+    });
+
   })
   .catch(()=> toast.error("Something went wrong"))
   .finally(()=>{
     setIsLoading(false);
-  })
- }
+  });
+ };
 
   return (
     <>
@@ -67,3 +67,18 @@ const router = useRouter();
 
 export default RegisterForm
 
+
+// signIn('credentials', {
+//   email: data.email,
+//   password: data.password,
+//   redirect: false,
+// }).then((callback)=> {
+//   if(callback?.ok){
+//     router.push("/");
+//     router.refresh();
+//     toast.success("logged In");       
+//   }
+//     if(callback?.error){
+//       toast.error(callback.error)
+//     }
+// });

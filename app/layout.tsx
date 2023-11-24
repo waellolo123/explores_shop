@@ -6,6 +6,7 @@ import Footer from './components/footer/Footer'
 import CartProvider from '@/providers/CartProvider'
 import {Toaster} from "react-hot-toast";
 
+
 const roboto = Roboto({ subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata: Metadata = {
@@ -13,11 +14,12 @@ export const metadata: Metadata = {
   description: 'Explores is all you need about running events',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
       <body className={`${roboto.className} text-slate-700`}>
