@@ -71,7 +71,7 @@ useEffect(()=>{
   return (
     <>
      <Heading title="Sign up to be Explores member"/>
-     <Button outline label="Sign Up with Google" icon={AiOutlineGoogle} onclick={() => {}}/>
+     <Button outline label="Sign Up with Google" icon={AiOutlineGoogle} onclick={() => {signIn('google')}}/>
      <hr className="bg-slate-300 w-full h-px" />
      <Input id="name" label="Name" disabled={isLoading} register={register} errors={errors} required/>
      <Input id="email" label="Email" disabled={isLoading} register={register} errors={errors} required/>
