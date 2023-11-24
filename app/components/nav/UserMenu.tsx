@@ -7,9 +7,10 @@ import MenuItem from "./MenuItem";
 import { signOut } from "next-auth/react";
 import BackDrop from "./BackDrop";
 import { SafeUser } from "@/types";
+import toast from "react-hot-toast";
 
 interface UserMenuProps{
-  currentUser: SafeUser
+  currentUser: SafeUser | null;
 }
 
 
@@ -41,6 +42,7 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
             <MenuItem onClick={()=>{
               toggleOpen();
               signOut();
+              toast.success("user logged out");
             }} >Logout</MenuItem>
           </div>
          ) : (
