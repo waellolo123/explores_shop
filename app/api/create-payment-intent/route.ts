@@ -31,7 +31,7 @@ export async function POST(request: Request){
     currency: 'usd',
     status: 'pending',
     deliveryStatus: 'pending',
-    paymentIntentId: payment_intent_id,
+    paymentIndentId: payment_intent_id,
     products: items
   }
 
@@ -71,9 +71,10 @@ export async function POST(request: Request){
       automatic_payment_methods: {enabled: true},
     });
     // create the order
-    orderData.paymentIntentId = paymentIntent.id;
+    orderData.paymentIndentId = paymentIntent.id;
     await prisma.order.create({
       data: orderData,
+
     });
     return NextResponse.json({paymentIntent});
   };
