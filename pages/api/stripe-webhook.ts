@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
 import {buffer} from "micro";
 
-export const confif = {
+export const config = {
   api: {
     bodyParser: false
   }
@@ -27,18 +27,18 @@ export default async function handler(
       buf,
       sig,
       process.env.STRIPE_WEBHOOK_SECRET!
-    )
+    );
   } catch (err) {
     return res.status(400).send("Webhook error" + err);
   }
   switch (event.type) {
     case 'charge.succeeded':
-      const charge: any = event.data.object as Stripe.Charge
+      const charge: any = event.data.object as Stripe.Charge;
       if(typeof charge.payment_intent === 'string'){
         await prisma?.order.update({
           where: {paymentIndentId: charge.payment_intent},
           data: {status: 'complete', address: charge.shipping?.address}
-        })
+        });
       } 
       break
       default: 

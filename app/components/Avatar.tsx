@@ -10,7 +10,7 @@ const Avatar:React.FC<AvatarProps> = ({src}) => {
 
   if(src){
     return (
-      <Image src={src} alt="avatar" className="rounded-full" height={50} width={50}/>
+      <Image src={src} alt="avatar" className="rounded-full" height={40} width={40}/>
       )
   } 
     return <BsPersonCircle size={24}/>
