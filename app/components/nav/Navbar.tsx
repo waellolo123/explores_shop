@@ -4,6 +4,7 @@ import Image from "next/image"
 import CartCount from "./CartCount"
 import UserMenu from "./UserMenu"
 import { getCurrentUser } from "@/actions/getCurrentUser"
+import Categories from "./Categories"
 
 
 const Navbar = async () => {
@@ -18,15 +19,20 @@ const Navbar = async () => {
              <Image src={"/images/explores_word.png"} width={150} height={100} alt=""/>
             </Link>
             <div className="hidden md:block">Search</div>
-            <div className="flex items-center gap-8 md:gap-12">
+            <div className="flex items-center gap-6 md:gap-6">
               <CartCount />
+              <span>Hi, {currentUser?.name}</span>
               <UserMenu currentUser={currentUser} />
             </div>
           </div>
         </Container>
       </div>
+      <Categories />
     </div>
   )
 }
 
 export default Navbar
+
+
+
